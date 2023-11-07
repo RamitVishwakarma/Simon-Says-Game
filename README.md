@@ -1,8 +1,7 @@
 # Simon Says Game
 
-![Simon Says Game]()
-<img src="screenshot.png" alt="Simon Says Game" width="300" height="200">
-
+![Simon Says Game](Screenshot.png)
+<img src="Screenshot.png" alt="Simon Says Game" width="300" height="200">
 
 
 A web-based implementation of the classic Simon Says memory game.
