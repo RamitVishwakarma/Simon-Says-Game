@@ -1,6 +1,6 @@
 # Simon Says Game
 
-![Simon Says Game](screenshot.png)
+![Simon Says Game](Screenshot.png)
 
 A web-based implementation of the classic Simon Says memory game.
 
