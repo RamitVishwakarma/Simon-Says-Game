@@ -30,5 +30,14 @@ You can play the game by opening the `index.html` file in your web browser.
 To run the game locally, follow these steps:
 
 1. Clone the repository:
+
    ```sh
    git clone https://github.com/yourusername/simon-says-game.git
+
+   ```
+
+2. Open the index.html file in your web browser to play.
+
+## Author
+
+Ramit Vishwakarma
