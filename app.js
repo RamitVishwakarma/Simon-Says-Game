@@ -44,7 +44,7 @@ function levelUp() {
 let allBtns = document.querySelectorAll(".clr");
 for (let btn of allBtns) {
   btn.addEventListener("click", btnPress);
-  btn.addEventListener("touchstart", btnPress);
+  // btn.addEventListener("touchstart", btnPress);
 }
 
 function blinking(color) {
