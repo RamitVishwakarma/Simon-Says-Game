@@ -4,8 +4,8 @@ let start = false;
 let level = 0;
 let colors = ["blue", "red", "yellow", "green"];
 let h3 = document.querySelector("h3");
-let score=[];
-// let color = document.querySelector(".colors");
+let score = [];
+const screenWidth = window.innerWidth;
 //Game Starter
 document.addEventListener("keypress", function () {
   if (start == false) {
@@ -13,20 +13,38 @@ document.addEventListener("keypress", function () {
     levelUp();
   }
 });
+document.addEventListener("touchstart", function () {
+  if (start == false) {
+    start = true;
+    levelUp();
+  }
+});
+
+function updateTextForMobile() {
+  if (screenWidth <= 768) {
+    h3.textContent = "Touch anywhere to start";
+  } else {
+    h3.textContent = "Press any key to start";
+  }
+}
+
+updateTextForMobile();
+window.addEventListener("resize", updateTextForMobile);
 
 function levelUp() {
   userSeq = [];
   level++;
   h3.innerText = `Level ${level}`;
 
-  let randomColor = Math.floor(Math.random() * 3);
+  let randomColor = Math.floor(Math.random() * 4);
   let color = document.querySelector(`.${colors[randomColor]}`);
   gameSeq.push(colors[randomColor]);
   blinking(color);
 }
 let allBtns = document.querySelectorAll(".clr");
-for (btn of allBtns) {
+for (let btn of allBtns) {
   btn.addEventListener("click", btnPress);
+  btn.addEventListener("touchstart", btnPress);
 }
 
 function blinking(color) {
@@ -63,8 +81,17 @@ function checkAns(e) {
     }
   } else {
     score.push(level);
-    let highscore=score.reduce((acc, current) => Math.max(acc, current), -Infinity);
-    h3.innerHTML = `Game Over. Your Score was <b>${level}.</b> <br />Highest Score ${highscore}. Press any Key to restart.`;
+    let highscore = score.reduce(
+      (acc, current) => Math.max(acc, current),
+      -Infinity
+    );
+
+    if (screenWidth <= 768) {
+      h3.innerHTML = `Game Over. Your Score was <b>${level}.</b> <br />Highest Score ${highscore}. Touch anywhere to restart.`;
+    } else {
+      h3.innerHTML = `Game Over. Your Score was <b>${level}.</b> <br />Highest Score ${highscore}. Press any Key to restart.`;
+    }
+    // h3.innerHTML = `Game Over. Your Score was <b>${level}.</b> <br />Highest Score ${highscore}. Press any Key to restart.`;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function () {
       document.querySelector("body").style.backgroundColor = "white";

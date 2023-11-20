@@ -1,47 +1,66 @@
-*{
-    margin: 0px;
-    font-family: 'Bungee', sans-serif;
+* {
+  margin: 0px;
+  font-family: "Bungee", sans-serif;
 }
 
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
-div{
-    width: 12rem;
-    height: 12rem;
-    margin: auto;
-    border-radius: 1rem;
-    border: 0.3rem solid black;
+h1,
+h3 {
+  text-align: center;
 }
-h1,h3{
-    text-align: center;
+.clr {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 1rem;
+  border: 0.3rem solid black;
 }
-.colors{
-    width: 30rem;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border: none;
-}
-
-.blue{
-    background-color: #4285F4;
-}
-.red{
-    background-color: #DB4437;
-}
-.yellow{
-    background-color: #F4B400;
-}
-.green{
-    background-color: #0F9D58;
+.colors {
+  width: 30rem;
+  height: 60vh;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border: none;
 }
 
-.blink{
-    background-color: white;
+.blue {
+  background-color: #4285f4;
 }
-.userBlink{
-    background-color: lightgreen;
+.red {
+  background-color: #db4437;
+}
+.yellow {
+  background-color: #f4b400;
+}
+.green {
+  background-color: #0f9d58;
+}
+
+.blink {
+  background-color: white;
+}
+.userBlink {
+  background-color: lightgreen;
+}
+
+@media (max-width: 768px) {
+  .clr {
+    width: 40%;
+    height: 40%;
+  }
+  .colors {
+    width: 90vw;
+    height: 80vw;
+    justify-content: space-evenly;
+  }
+  h1 {
+    font-size: large;
+  }
+  h3 {
+    font-size: medium;
+  }
 }
